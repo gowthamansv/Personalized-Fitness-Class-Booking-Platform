@@ -1,0 +1,13 @@
+.btn {
+  padding: 5px 10px 5px;
+  border-radius: 50px;
+}
+.home {
+  background-image: url(./assets/h-5.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.alice-carousel {
+  padding: 10px 20px;
+}
