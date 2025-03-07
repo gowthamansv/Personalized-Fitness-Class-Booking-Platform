@@ -11,7 +11,7 @@ import f2 from "../assets/f-2.png";
 import f3 from "../assets/f-3.png";
 import f4 from "../assets/f-4.png";
 import fg from "../assets/f-g.png";
-import "../css/feedbackcss.css";
+import "../css/Feedbackcss.css";
 
 const Feedback = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
