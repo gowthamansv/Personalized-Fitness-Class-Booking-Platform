@@ -10,22 +10,15 @@ const programRoutes = require("./routes/programRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 
 const app = express();
-app.use(express.json());
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://personalized-fitness-class-booking-pl.netlify.app/",
-];
+// app.use(express.json());
+// const allowedOrigins = [
+//   "http://localhost:5173",
+//   "https://personalized-fitness-class-booking-pl.netlify.app/",
+// ];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (allowedOrigins.includes(origin) || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
+    origin: "https://personalized-fitness-class-booking-pl.netlify.app/", // Replace with your frontend URL
   })
 );
 
