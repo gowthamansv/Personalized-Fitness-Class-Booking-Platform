@@ -105,7 +105,7 @@ const ClassDetails = () => {
               <td className="p-6 text-gray-800">{item.user.name}</td>
               <td className="p-6 text-gray-800">
                 <button
-                  className="px-5 py-2 rounded-3xl shadow-2xl bg-primary text-background cursor-pointer"
+                  className="bg-primary px-4 py-2 rounded-xl text-lg uppercase text-background cursor-pointer"
                   onClick={(e) => handleStatus(item)}
                 >
                   {item.status}

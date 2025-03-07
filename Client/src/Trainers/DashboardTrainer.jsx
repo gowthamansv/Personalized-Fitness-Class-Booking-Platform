@@ -58,7 +58,7 @@ const DashboardTrainer = () => {
       </div>
       {isShow && (
         <div className="absolute flex items-center justify-center top-12 z-50 right-5 mt-2 w-52 bg-s2 shadow-lg rounded-lg py-2 transition-all duration-300 transform">
-          <Link to="/logout/user" className="hover:text-gold">
+          <Link to="/logout/user" className="text-white">
             Logout
           </Link>
         </div>

@@ -114,7 +114,7 @@ const UserReview = () => {
                       <td className="p-7">{item.status}</td>
                       <td className="p-7">
                         <button
-                          className="px-5 py-2 rounded-3xl shadow-2xl bg-primary text-background cursor-pointer"
+                          className="bg-primary px-4 py-2 rounded-xl text-lg uppercase text-background cursor-pointer"
                           onClick={() => {
                             setSelectedClassId(item._id);
                             setIsReview(true);

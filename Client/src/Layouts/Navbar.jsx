@@ -98,7 +98,7 @@ const Navbar = () => {
       </div>
       <div className="hidden mobile:flex">
         <a href="/logintype">
-          <button className="btn px-4 py-2 text-black rounded bg-gray hover:bg-gold">
+          <button className="bg-primary px-4 py-2 rounded-xl text-lg uppercase text-background cursor-pointer">
             Sign Up
           </button>
         </a>
