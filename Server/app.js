@@ -52,6 +52,10 @@ app.options("*", (req, res) => {
   res.sendStatus(200);
 });
 
+app.options("*", cors());
+
+console.log("Request Origin:", req.headers.origin);
+
 app.use(cookieParser());
 
 app.use("/user", userRoutes);
