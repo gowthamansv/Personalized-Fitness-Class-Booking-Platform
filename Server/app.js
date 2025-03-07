@@ -10,7 +10,7 @@ const programRoutes = require("./routes/programRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 
 const app = express();
-
+app.use(express.json());
 const allowedOrigins = [
   "http://localhost:5173", // Local dev frontend
   "https://personalized-fitness-class-booking-pl.netlify.app/", // Production frontend URL
@@ -18,20 +18,18 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: (origin, callback) => {
+    origin: function (origin, callback) {
       if (allowedOrigins.includes(origin) || !origin) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
       }
     },
+    credentials: true, // Allow cookies or other credentials
   })
 );
 
-app.options("*", cors());
-
 app.use(cookieParser());
-app.use(express.json());
 
 app.use("/user", userRoutes);
 app.use("/trainer", trainerRoutes);
