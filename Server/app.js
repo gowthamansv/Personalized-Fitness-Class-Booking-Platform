@@ -12,8 +12,8 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const app = express();
 app.use(express.json());
 const allowedOrigins = [
-  "http://localhost:5173", // Local dev frontend
-  "https://personalized-fitness-class-booking-pl.netlify.app/", // Production frontend URL
+  "http://localhost:5173",
+  "https://personalized-fitness-class-booking-pl.netlify.app/",
 ];
 
 app.use(
@@ -25,7 +25,7 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true, // Allow cookies or other credentials
+    credentials: true,
   })
 );
 
@@ -42,28 +42,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.options("*", (req, res) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://personalized-fitness-class-booking-pl.netlify.app"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.sendStatus(200);
-});
-
-app.options("*", cors());
-
-console.log("Request Origin:", req.headers.origin);
-
 app.use(cookieParser());
 
-app.use("/user", userRoutes);
-app.use("/trainer", trainerRoutes);
-app.use("/slottime", slottimeRoutes);
-app.use("/booking", bookingRoutes);
-app.use("/plan", planRoutes);
-app.use("/program", programRoutes);
-app.use("/payment", paymentRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/trainer", trainerRoutes);
+app.use("/api/slottime", slottimeRoutes);
+app.use("/api/booking", bookingRoutes);
+app.use("/api/plan", planRoutes);
+app.use("/api/program", programRoutes);
+app.use("/api/payment", paymentRoutes);
 
 module.exports = app;

@@ -17,7 +17,7 @@ const DashboardTrainer = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://personalized-fitness-class-booking.onrender.com/trainer/trainerdetails",
+          "https://personalized-fitness-class-booking.onrender.com/api/trainer/trainerdetails",
           {
             headers: {
               Authorization: `Bearer ${token}`, // Include token in Authorization header

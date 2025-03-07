@@ -14,7 +14,7 @@ const Trainers = () => {
     const fetchTrainer = async () => {
       try {
         const response = await axios.get(
-          "https://personalized-fitness-class-booking.onrender.com/trainer"
+          "https://personalized-fitness-class-booking.onrender.com/api/trainer"
         );
         setTrainer(response.data);
       } catch (error) {
@@ -32,7 +32,7 @@ const Trainers = () => {
   const handleTrainer = async (id) => {
     try {
       const response = await axios.get(
-        `https://personalized-fitness-class-booking.onrender.com/trainer/${id}`
+        `https://personalized-fitness-class-booking.onrender.com/api/trainer/${id}`
       );
       console.log(response.data);
       setTrainerDetail(

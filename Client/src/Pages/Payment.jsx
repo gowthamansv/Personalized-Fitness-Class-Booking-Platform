@@ -20,7 +20,7 @@ const Payment = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://personalized-fitness-class-booking.onrender.com/plan"
+          "https://personalized-fitness-class-booking.onrender.com/api/plan"
         );
         setPlan(response.data);
         console.log(response.data);
@@ -42,7 +42,7 @@ const Payment = () => {
           return;
         }
         const response = await axios.get(
-          "https://personalized-fitness-class-booking.onrender.com/user/checkpayment",
+          "https://personalized-fitness-class-booking.onrender.com/api/user/checkpayment",
           {
             headers: {
               Authorization: `Bearer ${token}`, // Include token in Authorization header
@@ -81,7 +81,7 @@ const Payment = () => {
 
     try {
       const response = await axios.post(
-        "https://personalized-fitness-class-booking.onrender.com/payment",
+        "https://personalized-fitness-class-booking.onrender.com/api/payment",
         {
           amount,
           currency,
@@ -101,7 +101,7 @@ const Payment = () => {
         order_id: response.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         handler: async function (response) {
           const result = await axios.post(
-            "https://personalized-fitness-class-booking.onrender.com/payment/payorder",
+            "https://personalized-fitness-class-booking.onrender.com/api/payment/payorder",
             {
               plan: receiptId,
               amount: amount,

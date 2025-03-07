@@ -17,7 +17,7 @@ const History = () => {
     const fetchBookingSlot = async () => {
       try {
         const response = await axios.get(
-          "https://personalized-fitness-class-booking.onrender.com/booking/user",
+          "https://personalized-fitness-class-booking.onrender.com/api/booking/user",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -86,7 +86,7 @@ const History = () => {
   const deleteClass = async (item) => {
     try {
       const response = await axios.delete(
-        "https://personalized-fitness-class-booking.onrender.com/booking/delete",
+        "https://personalized-fitness-class-booking.onrender.com/api/booking/delete",
         {
           data: { id: String(item._id), slotTimeId: String(item.slotTime._id) },
           headers: {

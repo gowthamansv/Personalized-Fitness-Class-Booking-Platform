@@ -9,7 +9,7 @@ const TrainerReview = () => {
     const fetchReview = async () => {
       try {
         const response = await axios.get(
-          "https://personalized-fitness-class-booking.onrender.com/booking/trainer",
+          "https://personalized-fitness-class-booking.onrender.com/api/booking/trainer",
           {
             headers: {
               Authorization: `Bearer ${token}`,

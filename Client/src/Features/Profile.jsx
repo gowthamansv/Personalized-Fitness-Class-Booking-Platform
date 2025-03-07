@@ -63,7 +63,7 @@ const Profile = ({ user, isTrainer }) => {
     setIsEdit(false);
     try {
       const response = await axios.put(
-        `https://personalized-fitness-class-booking.onrender.com/${loginType}`,
+        `https://personalized-fitness-class-booking.onrender.com/api/${loginType}`,
         {
           name: item.name,
           email: item.email,

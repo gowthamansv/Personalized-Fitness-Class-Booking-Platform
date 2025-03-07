@@ -14,7 +14,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `https://personalized-fitness-class-booking.onrender.com/${loginType}/forgotpassword`,
+        `https://personalized-fitness-class-booking.onrender.com/api/${loginType}/forgotpassword`,
         { email }
       );
       toast.success(response.data.message, {

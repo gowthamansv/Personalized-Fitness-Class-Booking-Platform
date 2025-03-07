@@ -8,7 +8,7 @@ const ClassDetails = () => {
   useEffect(() => {
     const fetchClass = async () => {
       const response = await axios.get(
-        "https://personalized-fitness-class-booking.onrender.com/booking/trainer",
+        "https://personalized-fitness-class-booking.onrender.com/api/booking/trainer",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ const ClassDetails = () => {
   const saveChanges = async (item, status) => {
     try {
       const response = await axios.put(
-        "https://personalized-fitness-class-booking.onrender.com/booking/updatestatus",
+        "https://personalized-fitness-class-booking.onrender.com/api/booking/updatestatus",
         {
           slotTime: item.slotTime,
           status: status,

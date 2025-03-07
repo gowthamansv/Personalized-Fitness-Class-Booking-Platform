@@ -13,7 +13,7 @@ const Logout = () => {
     const handleLogout = async () => {
       try {
         await axios.post(
-          `https://personalized-fitness-class-booking.onrender.com/${loginType}/logout`,
+          `https://personalized-fitness-class-booking.onrender.com/api/${loginType}/logout`,
           {},
           { withCredentials: true }
         );

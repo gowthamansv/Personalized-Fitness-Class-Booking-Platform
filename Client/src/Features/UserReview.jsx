@@ -19,7 +19,7 @@ const UserReview = () => {
     const fetchClass = async () => {
       try {
         const response = await axios.get(
-          "https://personalized-fitness-class-booking.onrender.com/booking/user",
+          "https://personalized-fitness-class-booking.onrender.com/api/booking/user",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ const UserReview = () => {
 
     try {
       const response = await axios.put(
-        "https://personalized-fitness-class-booking.onrender.com/booking/updatereview",
+        "https://personalized-fitness-class-booking.onrender.com/api/booking/updatereview",
         { id: selectedClassId, reviewText: review, rating: rating },
         {
           headers: { Authorization: `Bearer ${token}` },
