@@ -72,7 +72,7 @@ const SlotBooking = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/slottime",
+        "https://personalized-fitness-class-booking.onrender.com/slottime",
         requestBody,
         {
           headers: {

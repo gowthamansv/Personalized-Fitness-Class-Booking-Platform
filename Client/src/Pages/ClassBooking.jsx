@@ -20,7 +20,9 @@ const ClassBooking = () => {
   useEffect(() => {
     const fetchTrainer = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/trainer");
+        const response = await axios.get(
+          "https://personalized-fitness-class-booking.onrender.com/trainer"
+        );
         setTrainer(response.data);
         setLoading(false);
       } catch (error) {
@@ -34,7 +36,9 @@ const ClassBooking = () => {
     };
     const fetchSlot = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/slottime");
+        const response = await axios.get(
+          "https://personalized-fitness-class-booking.onrender.com/slottime"
+        );
         setSlot(response.data);
         setLoading(false);
       } catch (error) {
@@ -79,7 +83,7 @@ const ClassBooking = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3001/slottime/trainer",
+        "https://personalized-fitness-class-booking.onrender.com/slottime/trainer",
         {
           id: trainerId,
         }
@@ -98,7 +102,7 @@ const ClassBooking = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/booking",
+        "https://personalized-fitness-class-booking.onrender.com/booking",
         { slotId: id },
         {
           headers: {

@@ -5,7 +5,9 @@ const FileViewer = ({ fileId }) => {
 
   useEffect(() => {
     if (fileId) {
-      setFileUrl(`http://localhost:3001/video/file/${fileId}`);
+      setFileUrl(
+        `https://personalized-fitness-class-booking.onrender.com/video/file/${fileId}`
+      );
     }
   }, [fileId]);
 

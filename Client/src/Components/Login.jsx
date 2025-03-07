@@ -16,7 +16,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:3001/${loginType}/login`,
+        `https://personalized-fitness-class-booking.onrender.com/${loginType}/login`,
         { email, password }, // Move this inside the request
         {
           headers: {

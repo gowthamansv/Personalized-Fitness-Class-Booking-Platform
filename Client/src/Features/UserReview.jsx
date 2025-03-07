@@ -18,12 +18,15 @@ const UserReview = () => {
   useEffect(() => {
     const fetchClass = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/booking/user", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://personalized-fitness-class-booking.onrender.com/booking/user",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            withCredentials: true,
+          }
+        );
 
         const bookedClasses = Array.isArray(response.data)
           ? response.data.filter((item) => item.status === "Completed")
@@ -56,7 +59,7 @@ const UserReview = () => {
 
     try {
       const response = await axios.put(
-        "http://localhost:3001/booking/updatereview",
+        "https://personalized-fitness-class-booking.onrender.com/booking/updatereview",
         { id: selectedClassId, reviewText: review, rating: rating },
         {
           headers: { Authorization: `Bearer ${token}` },

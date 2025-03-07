@@ -69,7 +69,7 @@ const Register = () => {
           };
 
       const response = await axios.post(
-        `http://localhost:3001/${loginType}/register`,
+        `https://personalized-fitness-class-booking.onrender.com/${loginType}/register`,
         requestBody,
         { withCredentials: true }
       );

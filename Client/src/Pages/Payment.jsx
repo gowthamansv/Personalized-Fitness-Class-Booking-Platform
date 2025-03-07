@@ -19,7 +19,9 @@ const Payment = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/plan");
+        const response = await axios.get(
+          "https://personalized-fitness-class-booking.onrender.com/plan"
+        );
         setPlan(response.data);
         console.log(response.data);
         setLoading(false);
@@ -40,7 +42,7 @@ const Payment = () => {
           return;
         }
         const response = await axios.get(
-          "http://localhost:3001/user/checkpayment",
+          "https://personalized-fitness-class-booking.onrender.com/user/checkpayment",
           {
             headers: {
               Authorization: `Bearer ${token}`, // Include token in Authorization header
@@ -78,11 +80,14 @@ const Payment = () => {
     const KEYID = import.meta.env.RAZORPAY_KEY_ID;
 
     try {
-      const response = await axios.post("http://localhost:3001/payment", {
-        amount,
-        currency,
-        receipt,
-      });
+      const response = await axios.post(
+        "https://personalized-fitness-class-booking.onrender.com/payment",
+        {
+          amount,
+          currency,
+          receipt,
+        }
+      );
 
       setOrder(response.data);
       console.log(response.data);
@@ -96,7 +101,7 @@ const Payment = () => {
         order_id: response.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         handler: async function (response) {
           const result = await axios.post(
-            "http://localhost:3001/payment/payorder",
+            "https://personalized-fitness-class-booking.onrender.com/payment/payorder",
             {
               plan: receiptId,
               amount: amount,

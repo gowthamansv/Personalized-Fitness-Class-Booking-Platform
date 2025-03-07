@@ -13,7 +13,7 @@ const Logout = () => {
     const handleLogout = async () => {
       try {
         await axios.post(
-          `http://localhost:3001/${loginType}/logout`,
+          `https://personalized-fitness-class-booking.onrender.com/${loginType}/logout`,
           {},
           { withCredentials: true }
         );

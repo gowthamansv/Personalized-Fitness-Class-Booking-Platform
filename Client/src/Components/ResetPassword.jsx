@@ -21,7 +21,7 @@ const PasswordReset = () => {
 
     try {
       const response = await axios.post(
-        ` http://localhost:3001/${loginType}/resetpassword/${token}`,
+        ` https://personalized-fitness-class-booking.onrender.com/${loginType}/resetpassword/${token}`,
         {
           newPassword,
         }

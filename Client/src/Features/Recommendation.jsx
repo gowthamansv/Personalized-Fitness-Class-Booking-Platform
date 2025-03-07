@@ -8,12 +8,15 @@ const Recommendation = () => {
   useEffect(() => {
     const fetchClass = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/booking/user", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://personalized-fitness-class-booking.onrender.com/booking/user",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            withCredentials: true,
+          }
+        );
         const userBookings = response.data; // User's booked classes
 
         // Calculate recommendations

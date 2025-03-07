@@ -13,7 +13,9 @@ const Trainers = () => {
   useEffect(() => {
     const fetchTrainer = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/trainer");
+        const response = await axios.get(
+          "https://personalized-fitness-class-booking.onrender.com/trainer"
+        );
         setTrainer(response.data);
       } catch (error) {
         console.log(error);
@@ -29,7 +31,9 @@ const Trainers = () => {
 
   const handleTrainer = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:3001/trainer/${id}`);
+      const response = await axios.get(
+        `https://personalized-fitness-class-booking.onrender.com/trainer/${id}`
+      );
       console.log(response.data);
       setTrainerDetail(
         Array.isArray(response.data) ? reaponse.data : [response.data]

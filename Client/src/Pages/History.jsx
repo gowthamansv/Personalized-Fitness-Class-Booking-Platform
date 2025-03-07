@@ -16,12 +16,15 @@ const History = () => {
   useEffect(() => {
     const fetchBookingSlot = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/booking/user", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://personalized-fitness-class-booking.onrender.com/booking/user",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            withCredentials: true,
+          }
+        );
         const currentDate = new Date();
 
         const bookingSlots = Array.isArray(response.data)
@@ -83,7 +86,7 @@ const History = () => {
   const deleteClass = async (item) => {
     try {
       const response = await axios.delete(
-        "http://localhost:3001/booking/delete",
+        "https://personalized-fitness-class-booking.onrender.com/booking/delete",
         {
           data: { id: String(item._id), slotTimeId: String(item.slotTime._id) },
           headers: {
