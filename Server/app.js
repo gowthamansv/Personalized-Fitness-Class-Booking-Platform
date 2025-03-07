@@ -10,30 +10,35 @@ const programRoutes = require("./routes/programRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 
 const app = express();
-// app.use(express.json());
-// const allowedOrigins = [
-//   "http://localhost:5173",
-//   "https://personalized-fitness-class-booking-pl.netlify.app/",
-// ];
-
+app.use(express.json());
+const allowedOrigins = [
+  "https://personalized-fitness-class-booking-pl.netlify.app",
+];
 app.use(
   cors({
-    origin: "https://personalized-fitness-class-booking-pl.netlify.app/", // Replace with your frontend URL
+    origin: function (origin, callback) {
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allow cookies or other credentials
   })
 );
-
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://personalized-fitness-class-booking-pl.netlify.app"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
-});
+app.options("*", cors());
+// app.use((req, res, next) => {
+//   res.setHeader(
+//     "Access-Control-Allow-Origin",
+//     "https://personalized-fitness-class-booking-pl.netlify.app"
+//   );
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, PUT, DELETE, OPTIONS"
+//   );
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//   next();
+// });
 
 app.use(cookieParser());
 
