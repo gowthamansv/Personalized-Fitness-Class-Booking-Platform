@@ -13,6 +13,7 @@ const app = express();
 app.use(express.json());
 const allowedOrigins = [
   "https://personalized-fitness-class-booking-pl.netlify.app",
+  "http://localhost:5173",
 ];
 app.use(
   cors({
